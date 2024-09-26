@@ -15,7 +15,7 @@ spec:
         spec:
           containers:
           - name: parabricks
-            image: nvcr.io/nvidia/clara/clara-parabricks:4.3.2-1
+            image: nvcr.io/nvidia/clara/clara-parabricks:4.0.3-1
             command:
             - /bin/run.sh
             args:
