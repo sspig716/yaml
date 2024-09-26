@@ -1,0 +1,38 @@
+apiVersion: primehub.io/v1alpha1
+kind: PhAppTemplate
+metadata:
+  name: parabricks
+  annotations:
+    helm.sh/hook: post-install, post-upgrade
+spec:
+  description: parabricks is a programming platform designed for engineers and scientists. The parabricks Deep Learning Container provides algorithms, pretrained models, and apps to create, train, visualize, and optimize deep neural networks.
+  docLink: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/clara/containers/clara-parabricks/tags
+  name: parabricks
+  template:
+    spec:
+      podTemplate:
+        spec:
+          containers:
+          - name: parabricks
+            image: nvcr.io/nvidia/clara/clara-parabricks:4.3.2-1
+            command:
+            - /bin/run.sh
+            args:
+            - -r
+            - bash
+            - -c
+            - sudo sed -i "s|/vnc.html|$PRIMEHUB_APP_BASE_URL/vnc.html|g" /opt/noVNC/redirect.html && sudo sed -i "s|resize=remote|resize=remote\&path=\.$PRIMEHUB_APP_BASE_URL/proxy/6080/websockify|g" /opt/noVNC/redirect.html && tail -f /var/log/alternatives.log
+            ports:
+            - containerPort: 6080
+              name: http
+              protocol: TCP
+      svcTemplate:
+        spec:
+          ports:
+            - name: http
+              port: 6080
+              protocol: TCP
+              targetPort: 6080
+      httpPort: 6080
+      rewrite: true
+  version: 4.3.2-1
