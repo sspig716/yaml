@@ -1,7 +1,7 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: streamlit
+  name: streamlit-cc
   annotations:
     helm.sh/hook: post-install, post-upgrade
 spec:
