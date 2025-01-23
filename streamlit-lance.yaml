@@ -20,7 +20,7 @@ spec:
         spec:
           containers:
           - name: streamlit
-            image: infuseai/primehub-apps:streamlit-v1.37.0
+            image: infuseai/primehub-apps:streamlit-v1.12.2
             command:
             - bash
             - -c
