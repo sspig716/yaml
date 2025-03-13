@@ -1,10 +1,10 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: ollama0.6.0
+  name: ollama
   namespace: hub
 spec:
-  name: Ollama0.6.0
+  name: Ollama
   version: v0.6.0
   description: Ollama makes it easy to get up and running with large language models locally.
   docLink: https://github.com/ollama/ollama/releases
@@ -23,16 +23,16 @@ spec:
       podTemplate:
         spec:
           containers:
-          - name: ollama0.6.0
+          - name: ollama
             image: docker.io/ollama/ollama:latest
             ports:
             - containerPort: 11434
-              name: ollama0.6.0
+              name: ollama
               protocol: TCP
       svcTemplate:
         spec:
           ports:
-            - name: ollama0.6.0
+            - name: ollama
               port: 11434
               protocol: TCP
               targetPort: 11434
