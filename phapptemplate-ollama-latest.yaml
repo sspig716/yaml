@@ -1,7 +1,7 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: ollamav060
+  name: ollama
   namespace: hub
 spec:
   name: Ollama
@@ -23,7 +23,7 @@ spec:
       podTemplate:
         spec:
           containers:
-          - name: ollama
+          - name: ollama-v060
             image: docker.io/ollama/ollama:latest
             ports:
             - containerPort: 11434
