@@ -23,11 +23,11 @@ spec:
       podTemplate:
         spec:
           containers:
-          - name: ollama-v060
+          - name: ollama
             image: docker.io/ollama/ollama:latest
             ports:
             - containerPort: 11434
-              name: ollama
+              name: ollama-v060
               protocol: TCP
       svcTemplate:
         spec:
