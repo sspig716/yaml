@@ -24,7 +24,7 @@ spec:
         spec:
           containers:
           - name: ollama
-            image: docker.io/ollama/ollama:latest
+            image: docker.io/ollama/ollama:v0.6.0
             ports:
             - containerPort: 11434
               name: ollama
