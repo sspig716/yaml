@@ -4,7 +4,7 @@ metadata:
   name: ollama0.6.0
   namespace: hub
 spec:
-  name: Ollama
+  name: Ollama0.6.0
   version: v0.6.0
   description: Ollama makes it easy to get up and running with large language models locally.
   docLink: https://github.com/ollama/ollama
