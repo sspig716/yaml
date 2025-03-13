@@ -1,7 +1,7 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: ollama
+  name: ollamav060
   namespace: hub
 spec:
   name: Ollama
