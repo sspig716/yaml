@@ -1,10 +1,10 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: ollama
+  name: ollama-v060-latest
   namespace: hub
 spec:
-  name: Ollama
+  name: Ollama-v060-latest
   version: v060-latest
   description: Ollama makes it easy to get up and running with large language models locally.
   docLink: https://github.com/ollama/ollama/releases
