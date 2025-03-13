@@ -32,7 +32,7 @@ spec:
       svcTemplate:
         spec:
           ports:
-            - name: ollama-v060
+            - name: ollama
               port: 11434
               protocol: TCP
               targetPort: 11434
