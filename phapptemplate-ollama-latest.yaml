@@ -1,11 +1,11 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
 metadata:
-  name: ollama-soc2
+  name: ollama-soc3
   namespace: hub
 spec:
-  name: Ollama-soc2
-  version: socv0.6.0
+  name: Ollama-soc3
+  version: socv0.12.3
   description: Ollama makes it easy to get up and running with large language models locally.
   docLink: https://github.com/ollama/ollama
   icon: data:image/png;base64,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
@@ -23,16 +23,16 @@ spec:
       podTemplate:
         spec:
           containers:
-          - name: ollama-soc2
+          - name: ollama-soc3
             image: docker.io/ollama/ollama:latest
             ports:
             - containerPort: 11434
-              name: ollama-soc2
+              name: ollama-soc3
               protocol: TCP
       svcTemplate:
         spec:
           ports:
-            - name: ollama-soc2
+            - name: ollama-soc3
               port: 11434
               protocol: TCP
               targetPort: 11434
