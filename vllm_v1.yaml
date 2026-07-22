@@ -1,5 +1,55 @@
 apiVersion: primehub.io/v1alpha1
 kind: PhAppTemplate
+
+metadata:
+  name: vllm-soc3
+  namespace: hub
+
+spec:
+
+  name: vLLM-soc3
+  version: socv0.1
+
+  defaultEnvs:
+
+  - name: HF_HOME
+    description: "HuggingFace model cache"
+    defaultValue: "$(PRIMEHUB_APP_ROOT)/huggingface_cache"
+    optional: false
+
+  - name: HUGGINGFACE_HUB_CACHE
+    description: "HF Hub cache"
+    defaultValue: "$(PRIMEHUB_APP_ROOT)/huggingface_cache"
+    optional: false
+
+
+  template:
+
+    spec:
+
+      podTemplate:
+
+        spec:
+
+          containers:
+
+          - name: vllm
+
+            image: vllm/vllm-openai:latest
+
+            env:
+
+            - name: HF_HOME
+              value: "$(HF_HOME)"
+
+            - name: HUGGINGFACE_HUB_CACHE
+              value: "$(HUGGINGFACE_HUB_CACHE)"
+
+            ports:
+
+            - containerPort: 8000
+              name: apiapiVersion: primehub.io/v1alpha1
+kind: PhAppTemplate
 metadata:
   name: vllm-soc3
   namespace: hub
