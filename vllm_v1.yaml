@@ -4,7 +4,7 @@ metadata:
   name: vllm-soc
   namespace: hub
 spec:
-  name: vLLM-soc3
+  name: vLLM-soc
   version: soc
   description: vLLM is a high-throughput and memory-efficient serving engine for LLMs.
   docLink: https://github.com/vllm-project/vllm
@@ -27,11 +27,11 @@ spec:
       podTemplate:
         spec:
           containers:
-          - name: vllm-soc3
+          - name: vllm-soc
             image: docker.io/vllm/vllm-openai:latest
             ports:
             - containerPort: 8000
-              name: vllm-soc3
+              name: vllm-soc
               protocol: TCP
             command: ["python3", "-m", "vllm.entrypoints.openai.api_server"]
             args:
@@ -55,7 +55,7 @@ spec:
       svcTemplate:
         spec:
           ports:
-            - name: vllm-soc3
+            - name: vllm-soc
               port: 8000
               protocol: TCP
               targetPort: 8000
